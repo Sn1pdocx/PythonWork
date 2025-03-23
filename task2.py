@@ -1,4 +1,3 @@
-# Початковий словник продуктів на складі
 stock = {
     "яблука": 10,
     "банани": 3,
@@ -11,16 +10,16 @@ def update_stock(product, quantity):
     if product in stock:
         stock[product] += quantity
         if stock[product] < 0:
-            stock[product] = 0  # Не дозволяємо від'ємні значення
+            stock[product] = 0  
     else:
         if quantity > 0:
-            stock[product] = quantity  # Додаємо новий товар
+            stock[product] = quantity  
 
     print(f"Оновлено: {product} = {stock[product]} шт.")
-
-update_stock("банани", 2)  # Додаємо 2 банани
-update_stock("хліб", -1)  # Видаляємо 1 хліб
-update_stock("сік", 5)  # Додаємо новий товар "сік"
+    
+update_stock("банани", 2)  
+update_stock("хліб", -1)  
+update_stock("сік", 5)  
 
 #список продуктів, яких менше ніж 5
 low_stock_items = [product for product, count in stock.items() if count < 5]
